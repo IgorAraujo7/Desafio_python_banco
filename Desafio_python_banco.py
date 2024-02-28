@@ -74,3 +74,4 @@ def deposito(saldo, valor, extrato, /):
 
     else:
         print("Operação falhou! O valor informado é inválido.")
+    return f"Saldo: R${saldo}. Extrato: {extrato}"
