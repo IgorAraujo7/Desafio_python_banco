@@ -18,10 +18,11 @@ while True:
     opcao = input(menu)
 
     if opcao == "d":
+        valor = float(input("Informe o valor do deposito: "))
         deposito(saldo, valor, extrato)
 
     elif opcao == "s":
-        valor = float(input("Informe o valor do depósito: "))
+        valor = float(input("Informe o valor do saque: "))
         saque(saldo=saldo, valor=valor, extrato=extrato, limite=limite, numero_saques=numero_saques, LIMITE_SAQUES=LIMITE_SAQUES)
 
     elif opcao == "e":
@@ -66,7 +67,7 @@ def saque(*, saldo, valor, extrato, limite, numero_saques, LIMITE_SAQUES):
     return f"Saldo: R${saldo}. Extrato: {extrato}"
 
 
-def deposito(saldo, valor, extrato):
+def deposito(saldo, valor, extrato, /):
     if valor > 0:
         saldo += valor
         extrato += f"Depósito: R$ {valor:.2f}\n"
